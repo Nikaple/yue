@@ -11,7 +11,7 @@ export default defineConfig({
     react(),
     pwa({
       devOptions: {
-        enabled: process.env.NODE_ENV === 'development' && !!process.env.pwa,
+        enabled: true,
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       workbox: {
@@ -19,7 +19,7 @@ export default defineConfig({
       },
       registerType: 'prompt',
       manifest: {
-        name: 'yuè - pure reader',
+        name: 'yuè',
         short_name: 'yuè',
         description:
           'Lightweight web reader, easy to use, clean interface, focused on reading',
@@ -52,7 +52,7 @@ export default defineConfig({
   build: {
     outDir: path.resolve(
       __dirname,
-      `./dist/web${process.env.pwa ? '-pwa' : ''}`,
+      `./dist`,
     ),
     rollupOptions: {
       output: {
